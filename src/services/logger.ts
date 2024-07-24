@@ -1,4 +1,9 @@
-export class Logger {
+export interface ILogger {
+  info: (message: string) => void;
+  error: (message: string) => void;
+}
+
+export class Logger implements ILogger {
   info(message: string) {
     const date = new Date().toISOString();
 
